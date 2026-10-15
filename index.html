@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ahmed Moataz — Brand Builder</title>
+<meta name="description" content="Ahmed Moataz — brand builder for esports, gaming and consumer brands across MENA and the US. Founder of Pegasus Esports. 9.5M+ views across the campaigns he led.">
+<meta name="theme-color" content="#0C0A08">
+
+<!-- Share preview (WhatsApp, LinkedIn, X). If your live link is different, change the two URLs below. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ahmed Moataz — I build brands people actually show up for">
+<meta property="og:description" content="Founder of Pegasus Esports. 9.5M+ views across Pegasus, Ink Plus and Glacial Globals.">
+<meta property="og:url" content="https://amotaz74.github.io/">
+<meta property="og:image" content="https://amotaz74.github.io/About.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23D02539'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='%23F1EEE6' text-anchor='middle'%3EAM%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+  :root{
+    --ink:#0C0A08;
+    --panel:#16110E;
+    --panel-2:#201915;
+    --line:rgba(241,238,230,0.09);
+    --line-2:rgba(241,238,230,0.16);
+    --gold:#C9A24B;
+    --red:#D02539;
+    --red-hot:#FF3B4E;
+    --text:#F1EEE6;
+    --muted:#9A9088;
+    --display:'Space Grotesk', system-ui, sans-serif;
+    --body:'Inter', system-ui, sans-serif;
+    --mono:'IBM Plex Mono', ui-monospace, monospace;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; scroll-padding-top:84px; }
+  body{ background:var(--ink); color:var(--text); font-family:var(--body); overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,h4{ font-family:var(--display); }
+  a{ color:inherit; text-decoration:none; }
+  img,video{ display:block; max-width:100%; }
+  ::selection{ background:var(--gold); color:var(--ink); }
+  :focus-visible{ outline:2px solid var(--red-hot); outline-offset:3px; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+
+  /* ---------- NAV ---------- */
+  nav{ position:fixed; inset:0 0 auto 0; z-index:100; background:rgba(12,10,8,0.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:72px; gap:24px; }
+  .brand{ font-family:var(--display); font-weight:700; font-size:18px; letter-spacing:0.01em; }
+  .brand span{ color:var(--red); }
+  .navlinks{ display:flex; gap:28px; align-items:center; }
+  .navlinks a{ font-family:var(--mono); font-size:12.5px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); transition:color .2s; }
+  .navlinks a:hover{ color:var(--text); }
+  .navlinks a.nav-cta{ color:var(--ink); background:var(--text); padding:9px 14px; }
+  .navlinks a.nav-cta:hover{ background:var(--red); color:var(--text); }
+  .menu-btn{ display:none; background:none; border:1px solid var(--line-2); color:var(--text); width:42px; height:42px; cursor:pointer; font-size:18px; }
+
+  /* ---------- HERO ---------- */
+  .hero{ min-height:100vh; min-height:100svh; display:flex; align-items:center; position:relative; padding:110px 0 70px; overflow:hidden; }
+  .hero-bg{ position:absolute; inset:0; z-index:0; background:var(--panel); }
+  .hero-bg video{ width:100%; height:100%; object-fit:cover; }
+  .hero-bg::after{
+    content:''; position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 900px 500px at 85% -10%, rgba(208,37,57,0.26), transparent 60%),
+      radial-gradient(ellipse 700px 500px at -10% 110%, rgba(201,162,75,0.16), transparent 60%),
+      linear-gradient(180deg, rgba(12,10,8,0.50) 0%, rgba(12,10,8,0.86) 62%, var(--ink) 100%);
+  }
+  .hero-grid{ position:relative; z-index:2; display:grid; grid-template-columns:1.3fr 1fr; gap:60px; align-items:center; width:100%; }
+  .eyebrow{ display:inline-flex; align-items:center; gap:10px; font-family:var(--mono); font-size:12px; letter-spacing:0.12em; color:var(--gold); text-transform:uppercase; margin-bottom:22px; }
+  .eyebrow::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--red); box-shadow:0 0 0 4px rgba(208,37,57,0.25); animation:pulse 1.6s infinite; }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.35;} }
+  .hero h1{ font-size:clamp(42px, 6.4vw, 80px); line-height:1.0; font-weight:700; letter-spacing:-0.025em; }
+  .hero h1 em{ font-style:normal; color:var(--red); }
+  .lede{ margin-top:24px; max-width:520px; color:#C9C0B6; font-size:17px; line-height:1.65; }
+  .hero-actions{ margin-top:34px; display:flex; gap:12px; flex-wrap:wrap; }
+  .btn{ display:inline-block; padding:14px 24px; font-family:var(--mono); font-size:12.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; border:1px solid var(--line-2); transition:background .2s, border-color .2s, color .2s; }
+  .btn-solid{ background:var(--text); color:var(--ink); border-color:var(--text); }
+  .btn-solid:hover{ background:var(--red); border-color:var(--red); color:var(--text); }
+  .btn-ghost:hover{ border-color:var(--text); }
+
+  .scorecard{ background:rgba(22,17,14,0.82); backdrop-filter:blur(6px); border:1px solid var(--line-2); }
+  .scorecard-head{ display:flex; justify-content:space-between; align-items:center; padding:14px 18px; border-bottom:1px solid var(--line); font-family:var(--mono); font-size:11px; letter-spacing:0.1em; color:var(--muted); text-transform:uppercase; }
+  .live{ display:inline-flex; align-items:center; gap:6px; color:var(--red-hot); }
+  .live::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--red-hot); animation:pulse 1.6s infinite; }
+  .stat-row{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 18px; border-bottom:1px solid var(--line); }
+  .stat-row:last-child{ border-bottom:none; }
+  .stat-num{ font-family:var(--display); font-size:32px; font-weight:700; color:var(--red); line-height:1; }
+  .stat-row.lead .stat-num{ font-size:44px; color:var(--text); }
+  .stat-label{ font-family:var(--mono); font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; text-align:right; max-width:170px; line-height:1.45; }
+
+  /* ---------- TICKER ---------- */
+  .ticker-bar{ background:linear-gradient(90deg, #B21E31, var(--red), #B21E31); overflow:hidden; white-space:nowrap; border-block:1px solid rgba(0,0,0,.35); }
+  .ticker-track{ display:inline-flex; animation:scroll 34s linear infinite; font-family:var(--mono); font-weight:600; font-size:13px; letter-spacing:0.05em; }
+  .ticker-track span{ padding:14px 26px; display:inline-flex; align-items:center; }
+  .ticker-track span::after{ content:'//'; margin-left:26px; color:var(--gold); }
+  @keyframes scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* ---------- SECTIONS ---------- */
+  section{ padding:120px 0; }
+  .sec-head{ margin-bottom:56px; max-width:660px; }
+  .sec-eyebrow{ display:block; font-family:var(--mono); font-size:12px; color:var(--red-hot); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:14px; }
+  .sec-head h2{ font-size:clamp(30px, 4.2vw, 46px); font-weight:700; letter-spacing:-0.015em; line-height:1.08; }
+  .sec-head p{ color:var(--muted); margin-top:16px; font-size:16px; line-height:1.7; }
+
+  /* ---------- MEDIA (shared) ---------- */
+  .media{ position:relative; overflow:hidden; background:linear-gradient(150deg, var(--panel), var(--panel-2)); border:1px solid var(--line); aspect-ratio:4/3; cursor:zoom-in; transition:border-color .3s, box-shadow .3s, transform .3s; }
+  .media:hover{ border-color:var(--gold); box-shadow:0 20px 50px -22px rgba(208,37,57,0.55); transform:translateY(-3px); }
+  .media img, .media video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .media.contain img, .media.contain video{ object-fit:contain; }
+  .media.wide{ aspect-ratio:16/9; }
+  .media .tag{ position:absolute; z-index:2; left:12px; bottom:12px; font-family:var(--mono); font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; background:rgba(12,10,8,0.78); padding:6px 9px; border:1px solid var(--line-2); color:var(--text); }
+  .media .play{ position:absolute; z-index:2; top:12px; right:12px; width:34px; height:34px; border-radius:50%; background:rgba(208,37,57,0.85); display:grid; place-items:center; font-size:12px; box-shadow:0 0 20px rgba(208,37,57,0.5); }
+  /* when a file is missing online, show a clean branded panel instead of a broken box */
+  .media.is-missing img, .media.is-missing video{ display:none; }
+  .media.is-missing::before{ content:'AM'; position:absolute; inset:0; display:grid; place-items:center; font-family:var(--display); font-weight:700; font-size:34px; color:rgba(241,238,230,0.08); background:repeating-linear-gradient(135deg, transparent 0 14px, rgba(241,238,230,0.025) 14px 15px); }
+
+  /* bento gallery: one tall, two small, one wide */
+  .bento{ display:grid; grid-template-columns:1fr 1fr; grid-auto-rows:112px; gap:10px; }
+  .bento .media{ aspect-ratio:auto; height:100%; }
+  .bento .tall{ grid-row:span 2; }
+  .bento .span{ grid-column:span 2; grid-row:span 2; }
+
+  /* ---------- ABOUT ---------- */
+  .about-layout{ display:grid; grid-template-columns:320px 1fr 1fr; gap:56px; align-items:start; }
+  .about-layout p{ color:var(--muted); font-size:16px; line-height:1.8; margin-bottom:20px; }
+  .about-layout strong{ color:var(--text); font-weight:600; }
+  .pillquote{ border-left:2px solid var(--red); padding-left:20px; margin-top:26px; font-family:var(--display); font-size:21px; line-height:1.45; color:var(--text); }
+
+  .frame{ position:relative; }
+  .frame-accent{ position:absolute; top:18px; left:18px; right:-18px; bottom:-18px; background:linear-gradient(135deg, var(--red), var(--gold)); }
+  .frame .media{ aspect-ratio:4/5; z-index:1; }
+  .frame .media img{ filter:grayscale(40%) contrast(1.06); transition:filter .5s ease; }
+  .frame:hover .media img{ filter:none; }
+  .badge{ position:absolute; z-index:3; bottom:-16px; left:-16px; background:var(--ink); border:1px solid var(--gold); padding:11px 16px; transform:rotate(-3deg); font-family:var(--mono); font-size:10.5px; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); box-shadow:0 14px 34px -8px rgba(0,0,0,.65); }
+  .badge b{ display:block; margin-top:3px; font-family:var(--display); font-size:15px; letter-spacing:0; text-transform:none; color:var(--red-hot); }
+  .about-layout .frame{ position:sticky; top:110px; }
+
+  /* ---------- CAPABILITIES ---------- */
+  .services{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  .service{ background:var(--ink); padding:38px 30px; transition:background .3s; }
+  .service:hover{ background:var(--panel); }
+  .service-num{ display:block; font-family:var(--mono); color:var(--gold); font-size:13px; margin-bottom:22px; }
+  .service h3{ font-size:21px; margin-bottom:12px; }
+  .service p{ color:var(--muted); font-size:14.5px; line-height:1.65; }
+
+  /* ---------- PROJECTS ---------- */
+  .project{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; padding:60px 0; border-top:1px solid var(--line); }
+  .project.flip .project-media{ order:2; }
+  .project-tag{ font-family:var(--mono); font-size:12px; color:var(--gold); letter-spacing:0.08em; }
+  .project h3{ font-size:clamp(24px, 2.6vw, 30px); margin:14px 0 16px; line-height:1.15; }
+  .project p{ color:var(--muted); font-size:15px; line-height:1.75; margin-bottom:14px; }
+  .project p strong{ color:var(--text); }
+  .role{ font-family:var(--mono); font-size:12px; color:var(--text); opacity:.75; margin-bottom:14px; }
+  .chips{ display:flex; gap:10px; flex-wrap:wrap; margin-top:20px; }
+  .chip{ border:1px solid var(--line-2); padding:10px 14px; font-family:var(--mono); font-size:11.5px; color:var(--muted); }
+  .chip b{ display:block; font-family:var(--display); font-size:17px; color:var(--red-hot); margin-bottom:2px; }
+
+  .split-head{ margin-top:70px; padding-top:70px; border-top:1px solid var(--line); }
+  .split-head .sec-eyebrow{ color:var(--gold); }
+
+  .sov{ margin-top:24px; padding:20px; border:1px solid var(--line); background:var(--panel); }
+  .sov-row{ display:flex; align-items:center; gap:14px; margin-bottom:10px; }
+  .sov-label{ width:122px; flex-shrink:0; font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .sov-track{ flex:1; }
+  .sov-bar{ height:30px; display:flex; align-items:center; justify-content:flex-end; padding:0 10px; background:var(--panel-2); border:1px solid var(--line); font-family:var(--mono); font-weight:600; font-size:12px; color:var(--muted); width:0; transition:width 1.1s cubic-bezier(.2,.8,.2,1); }
+  .sov-bar.lead{ background:var(--red); border-color:var(--red); color:var(--text); }
+  .sov-caption{ font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-top:12px; }
+
+  /* ---------- REEL ---------- */
+  .reel{ display:flex; gap:16px; overflow-x:auto; padding:6px 2px 22px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; }
+  .reel::-webkit-scrollbar{ height:6px; }
+  .reel::-webkit-scrollbar-thumb{ background:var(--line-2); }
+  .reel .media{ flex:0 0 auto; width:236px; aspect-ratio:9/16; scroll-snap-align:start; }
+  .reel .media.feature{ width:340px; aspect-ratio:4/5; }
+  .reel .media .cap{ position:absolute; z-index:2; inset:auto 0 0 0; padding:40px 16px 16px; background:linear-gradient(0deg, rgba(0,0,0,.85), transparent); font-family:var(--mono); font-size:11.5px; color:#D8D0C6; }
+  .reel .media .cap b{ display:block; font-family:var(--display); font-size:16px; color:var(--text); margin-bottom:3px; }
+  .reel .media.feature .cap b{ font-size:20px; }
+  .reel-nav{ display:flex; justify-content:space-between; align-items:center; margin-top:8px; font-family:var(--mono); font-size:12px; color:var(--muted); }
+  .reel-nav button{ background:none; border:1px solid var(--line-2); color:var(--text); width:40px; height:40px; cursor:pointer; font-size:16px; margin-left:8px; }
+  .reel-nav button:hover{ border-color:var(--gold); }
+
+  /* ---------- IMPACT ---------- */
+  .total{ display:flex; align-items:flex-end; justify-content:space-between; gap:30px; flex-wrap:wrap; padding:36px 34px; border:1px solid var(--line-2); border-bottom:none; background:linear-gradient(120deg, rgba(208,37,57,0.16), transparent 55%), var(--panel); }
+  .total-num{ font-family:var(--display); font-weight:700; font-size:clamp(56px, 9vw, 104px); line-height:.9; letter-spacing:-0.03em; }
+  .total-num span{ color:var(--red); }
+  .total-label{ max-width:340px; color:var(--muted); font-size:15px; line-height:1.6; }
+  .total-label b{ color:var(--text); }
+  .impact-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line-2); }
+  .impact-block{ background:var(--ink); padding:32px 30px; }
+  .impact-head{ display:flex; flex-direction:column; gap:5px; margin-bottom:22px; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold); }
+  .impact-head.hot{ color:var(--red-hot); }
+  .impact-head b{ font-family:var(--display); font-size:22px; color:var(--text); text-transform:none; letter-spacing:0; }
+  .impact-table{ width:100%; border-collapse:collapse; }
+  .impact-table td{ padding:15px 0; border-bottom:1px solid var(--line); font-size:14px; color:var(--muted); vertical-align:top; }
+  .impact-table tr:last-child td{ border-bottom:none; }
+  .impact-table td.num{ text-align:right; font-family:var(--display); font-weight:700; font-size:19px; color:var(--red-hot); white-space:nowrap; padding-left:12px; }
+  .num-sub{ display:block; margin-top:3px; font-family:var(--mono); font-weight:500; font-size:10.5px; color:var(--muted); }
+
+  /* ---------- LISTS (education / writing) ---------- */
+  .list{ border-top:1px solid var(--line); }
+  .list-item{ display:flex; justify-content:space-between; align-items:center; gap:20px; padding:26px 0; border-bottom:1px solid var(--line); }
+  .list-item h4{ font-size:18px; font-weight:600; }
+  .list-item p{ color:var(--muted); font-size:14px; margin-top:6px; line-height:1.6; }
+  .year{ flex-shrink:0; font-family:var(--mono); font-size:12px; color:var(--gold); border:1px solid var(--line-2); padding:7px 11px; }
+  .org-chips{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+  .org-chips span{ font-family:var(--mono); font-size:11px; color:var(--text); border:1px solid var(--line-2); padding:5px 9px; }
+
+  /* ---------- CONTACT / FOOTER ---------- */
+  footer{ padding:110px 0 44px; border-top:1px solid var(--line); background:radial-gradient(ellipse 700px 400px at 90% 0%, rgba(208,37,57,0.12), transparent 60%); }
+  .contact-row{ display:flex; justify-content:space-between; align-items:center; gap:64px; flex-wrap:wrap; }
+  .contact-cta{ flex:1; min-width:280px; }
+  .contact-cta h2{ font-size:clamp(34px, 5.4vw, 62px); font-weight:700; letter-spacing:-0.02em; line-height:1.02; max-width:680px; }
+  .contact-cta h2 em{ font-style:normal; color:var(--red); }
+  .contact-actions{ display:flex; gap:12px; flex-wrap:wrap; margin-top:34px; }
+  .contact-links{ display:flex; gap:26px; flex-wrap:wrap; margin-top:26px; }
+  .contact-links a{ font-family:var(--mono); font-size:13.5px; color:var(--muted); border-bottom:1px solid var(--line-2); padding-bottom:4px; }
+  .contact-links a:hover{ color:var(--text); border-color:var(--red); }
+  .frame.tilt{ width:250px; flex-shrink:0; transform:rotate(2deg); margin-right:18px; }
+  .frame.tilt .frame-accent{ background:linear-gradient(135deg, var(--gold), var(--red)); }
+
+  .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:40px; margin-top:100px; padding-top:50px; border-top:1px solid var(--line); }
+  .footer-brand p{ color:var(--muted); font-size:13.5px; line-height:1.7; margin-top:14px; max-width:270px; }
+  .footer-col{ display:flex; flex-direction:column; gap:12px; }
+  .footer-title{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold); margin-bottom:4px; }
+  .footer-col a{ color:var(--muted); font-size:14px; transition:color .2s; }
+  .footer-col a:hover{ color:var(--red-hot); }
+  .foot-bottom{ margin-top:50px; padding-top:26px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; font-family:var(--mono); font-size:12px; color:var(--muted); }
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{ position:fixed; inset:0; z-index:1000; display:none; align-items:center; justify-content:center; padding:48px 24px; background:rgba(6,5,4,0.94); backdrop-filter:blur(6px); }
+  .lightbox.open{ display:flex; }
+  .lightbox-media{ max-width:1000px; width:100%; max-height:84vh; display:flex; justify-content:center; }
+  .lightbox-media img, .lightbox-media video{ max-width:100%; max-height:84vh; width:auto; height:auto; object-fit:contain; border:1px solid var(--line-2); }
+  .lightbox-close{ position:absolute; top:20px; right:24px; background:none; border:1px solid var(--line-2); color:var(--text); width:44px; height:44px; font-size:18px; cursor:pointer; }
+  .lightbox-hint{ position:absolute; bottom:18px; left:0; right:0; text-align:center; font-family:var(--mono); font-size:11.5px; color:var(--muted); }
+
+  /* missing-file checker (only visible when you add ?check to the link) */
+  .checker{ position:fixed; z-index:2000; left:16px; right:16px; bottom:16px; max-width:560px; background:#1c0f10; border:1px solid var(--red); padding:16px 18px; font-family:var(--mono); font-size:12.5px; line-height:1.6; color:var(--text); }
+  .checker b{ color:var(--red-hot); }
+
+  /* ---------- MOTION ---------- */
+  html.js .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  html.js .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .ticker-track, .eyebrow::before, .live::before{ animation:none; }
+    html.js .reveal{ opacity:1; transform:none; transition:none; }
+    .media, .media:hover{ transform:none; }
+    .sov-bar{ transition:none; }
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 1000px){
+    .about-layout{ grid-template-columns:280px 1fr; }
+    .about-layout .about-col-2{ grid-column:2; }
+    .impact-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width: 860px){
+    .wrap{ padding:0 18px; }
+    .menu-btn{ display:grid; place-items:center; }
+    .navlinks{ display:none; position:absolute; top:72px; left:0; right:0; flex-direction:column; align-items:stretch; gap:0; background:var(--ink); border-bottom:1px solid var(--line-2); padding:8px 18px 18px; box-shadow:0 24px 40px -12px rgba(0,0,0,.7); }
+    nav.open .navlinks{ display:flex; }
+    .navlinks a{ padding:14px 0; border-bottom:1px solid var(--line); font-size:13px; }
+    .navlinks a.nav-cta{ margin-top:12px; text-align:center; border-bottom:none; }
+    .hero-grid{ grid-template-columns:1fr; gap:40px; }
+    section{ padding:84px 0; }
+    .about-layout{ grid-template-columns:1fr; gap:26px; }
+    .about-layout .frame{ position:relative; top:0; max-width:300px; margin:0 18px 30px 0; }
+    .about-layout .about-col-2{ grid-column:auto; }
+    .services{ grid-template-columns:1fr; }
+    .project, .project.flip{ grid-template-columns:1fr; gap:30px; }
+    .project.flip .project-media{ order:0; }
+    .bento{ grid-auto-rows:88px; }
+    .footer-grid{ grid-template-columns:1fr 1fr; gap:30px; }
+    .frame.tilt{ width:210px; }
+    .total{ padding:28px 22px; }
+    .sov-label{ width:100px; }
+  }
+</style>
+</head>
+<body>
+
+<!--
+  HOW MEDIA WORKS ON THIS SITE
+  Every file name below must match your folder EXACTLY, including capital letters.
+  Windows ignores capitals, websites do not. "About.jpg" and "about.jpg" are different files online.
+  To check a live link for missing files, open it with ?check at the end, e.g. https://amotaz74.github.io/?check
+
+  LINKEDIN: paste your LinkedIn profile link between the quotes in the script at the bottom (LINKEDIN_URL).
+-->
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="Ahmed Moataz, back to top">AHMED<span>.</span>MOATAZ</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <div class="navlinks" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#reel">Reel</a>
+      <a href="#impact">Impact</a>
+      <a href="#education">Education</a>
+      <a href="#writing">Writing</a>
+      <a href="#contact" class="nav-cta">Let's talk</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg">
+    <video autoplay muted loop playsinline preload="auto" aria-hidden="true">
+      <source src="Introo.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Brand builder · MENA &amp; US</div>
+      <h1>I build brands<br>people <em>actually</em><br>show up for.</h1>
+      <p class="lede">I build brands from zero and scale the ones that already exist — across esports, gaming culture and consumer markets. Founder of Pegasus Esports. Marketing lead at Ink Plus.</p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-solid">See the work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="scorecard reveal">
+      <div class="scorecard-head"><span>Career stats // 3 brands</span><span class="live">Live</span></div>
+      <div class="stat-row lead"><span class="stat-num">9.5M+</span><span class="stat-label">Views across campaigns I led</span></div>
+      <div class="stat-row"><span class="stat-num">5M+</span><span class="stat-label">"I'M A FLAMINGO" campaign, US</span></div>
+      <div class="stat-row"><span class="stat-num">3M+</span><span class="stat-label">Pegasus Esports, fully organic</span></div>
+      <div class="stat-row"><span class="stat-num">+49.8%</span><span class="stat-label">Ink Plus views, quarter on quarter</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="ticker-bar" aria-hidden="true">
+  <div class="ticker-track">
+    <span>9.5M+ VIEWS ACROSS 3 BRANDS</span>
+    <span>PEGASUS ESPORTS — FOUNDED FROM ZERO</span>
+    <span>5M+ VIEWS — "I'M A FLAMINGO" × MARC REBILLET</span>
+    <span>INK PLUS — SHARE OF VOICE LEADER IN 2 MONTHS</span>
+    <span>GAMERGY · INSOMNIA · RED BULL</span>
+    <span>MERCH: SEOUL → RIYADH → CAIRO</span>
+    <span>ACADEMY ALUMNI IN NLC · LPLOL · ULTRALIGA</span>
+    <span>9.5M+ VIEWS ACROSS 3 BRANDS</span>
+    <span>PEGASUS ESPORTS — FOUNDED FROM ZERO</span>
+    <span>5M+ VIEWS — "I'M A FLAMINGO" × MARC REBILLET</span>
+    <span>INK PLUS — SHARE OF VOICE LEADER IN 2 MONTHS</span>
+    <span>GAMERGY · INSOMNIA · RED BULL</span>
+    <span>MERCH: SEOUL → RIYADH → CAIRO</span>
+    <span>ACADEMY ALUMNI IN NLC · LPLOL · ULTRALIGA</span>
+  </div>
+</div>
+
+<main>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">01 / About</span>
+      <h2>Built it before anyone believed in it.</h2>
+    </div>
+    <div class="about-layout reveal">
+      <div class="frame">
+        <div class="frame-accent"></div>
+        <div class="media"><img src="About.jpg" alt="Ahmed Moataz with the Pegasus Esports team" decoding="async"></div>
+        <div class="badge">Brand Builder<b>MENA · Esports</b></div>
+      </div>
+      <div>
+        <p>I built <strong>Pegasus Esports</strong> from a blank page into one of Egypt's most recognized esports brands — no investors, no paid media, no team behind me at the start. Just strategy, content and relentless execution.</p>
+        <p>Over three years, Pegasus reached <strong>1.2M+ monthly impressions</strong> organically, shipped merchandise to <strong>7 countries</strong>, and developed creators who became some of the most influential voices in MENA gaming.</p>
+      </div>
+      <div class="about-col-2">
+        <p>It's not only zero-to-one. At <strong>Ink Plus</strong> I stepped into a running business and, in two months, grew views <strong>49.8% quarter on quarter</strong> and made it the Share of Voice leader in its market. At <strong>Glacial Globals</strong> in the US, I ran the creative system behind a <strong>5M+ view</strong> campaign.</p>
+        <div class="pillquote">"Give me nothing and I'll build it. Give me something and I'll scale it."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">02 / Capabilities</span>
+      <h2>What I do</h2>
+    </div>
+    <div class="services reveal">
+      <div class="service">
+        <span class="service-num">01</span>
+        <h3>Brand building</h3>
+        <p>Positioning, voice, visual direction and narrative — built from zero, not templated. Every brand gets a reason to exist and a reason to be remembered.</p>
+      </div>
+      <div class="service">
+        <span class="service-num">02</span>
+        <h3>Content &amp; community growth</h3>
+        <p>Content systems, not just calendars — each piece compounding on the last, training an audience to expect something worth coming back for.</p>
+      </div>
+      <div class="service">
+        <span class="service-num">03</span>
+        <h3>Marketing &amp; activation</h3>
+        <p>Taking brands off the screen and into rooms — events, partnerships and real-world moments that create presence and get remembered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">03 / Selected work</span>
+      <h2>Six projects. Three brands. Two markets.</h2>
+      <p>Four from building Pegasus from nothing, two from growing brands that already existed. Click any photo or video to open it full size.</p>
+    </div>
+
+    <article class="project reveal">
+      <div class="project-media">
+        <div class="media wide" data-video>
+          <video muted loop playsinline preload="metadata">
+            <source src="Pegasusxx.mp4" type="video/mp4">
+          </video>
+          <span class="play">▶</span>
+        </div>
+      </div>
+      <div>
+        <span class="project-tag">01 — Founding story</span>
+        <h3>Pegasus Esports: baby steps</h3>
+        <p>Started as a grassroots initiative to build a competitive team while creating a strong brand inside the MENA gaming community. The focus was identity, content and community over short-term results — and it grew into a recognized regional esports brand.</p>
+        <p><strong>Philosophy:</strong> community comes before promotion. Every project starts with understanding the audience, the community, and the story the brand wants to tell.</p>
+      </div>
+    </article>
+
+    <article class="project flip reveal">
+      <div class="project-media">
+        <div class="bento">
+          <div class="media tall"><img src="Jersey 1.jpg" alt="Pegasus jersey design" loading="lazy" decoding="async"><span class="tag">Design</span></div>
+          <div class="media"><img src="Jersey 2.jpg" alt="Jersey launch content" loading="lazy" decoding="async"><span class="tag">Launch</span></div>
+          <div class="media"><img src="Jersey 3.jpg" alt="Team wearing the Pegasus jersey" loading="lazy" decoding="async"><span class="tag">In the wild</span></div>
+          <div class="media span" data-video>
+            <video muted loop playsinline preload="metadata"><source src="Video Jersey.mp4" type="video/mp4"></video>
+            <span class="play">▶</span><span class="tag">Launch film</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="project-tag">02 — Brand identity &amp; merchandise</span>
+        <h3>The official Pegasus jersey</h3>
+        <p>Designed and launched the team's official jersey — inspired by Egyptian heritage, built for modern esports culture. I owned the whole process: design direction, manufacturing and the community launch.</p>
+        <div class="chips">
+          <div class="chip"><b>&lt;30 days</b>Brief to launch</div>
+          <div class="chip"><b>80%</b>Sold through in 2 weeks</div>
+          <div class="chip"><b>7</b>Countries shipped to</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="project reveal">
+      <div class="project-media">
+        <div class="bento">
+          <div class="media tall"><img src="On Ground.jpg" alt="Pegasus on the ground at a gaming event" loading="lazy" decoding="async"><span class="tag">On the ground</span></div>
+          <div class="media"><img src="RB Loginn.jpg" alt="Red Bull Login invitation" loading="lazy" decoding="async"><span class="tag">Red Bull</span></div>
+          <div class="media"><img src="Gamergy 1.jpg" alt="Gamergy event" loading="lazy" decoding="async"><span class="tag">Gamergy</span></div>
+          <div class="media span"><img src="Gamergy 2.jpg" alt="Gamergy community moments" loading="lazy" decoding="async"><span class="tag">Community</span></div>
+        </div>
+      </div>
+      <div>
+        <span class="project-tag">03 — Industry presence &amp; events</span>
+        <h3>On the ground, in the room</h3>
+        <p>Represented Pegasus at the region's biggest gaming events — Gamergy, Insomnia and Red Bull activations — while developing creators, two of whom grew into some of the most influential personalities in MENA gaming.</p>
+        <p>Built a real community, not just followers, across X, Instagram and Discord — a place where gamers felt part of the journey.</p>
+      </div>
+    </article>
+
+    <article class="project flip reveal">
+      <div class="project-media">
+        <div class="media wide contain"><img src="Academy.jpg" alt="Pegasus Academy players" loading="lazy" decoding="async"></div>
+      </div>
+      <div>
+        <span class="project-tag">04 — Talent development</span>
+        <h3>Pegasus Academy</h3>
+        <p>A long-term initiative developing emerging esports talent through mentorship, structured team environments and competitive exposure. Alumni went on to established MENA teams and international leagues, including <strong>NLC, LPLOL and Ultraliga</strong>.</p>
+      </div>
+    </article>
+
+    <div class="sec-head split-head reveal">
+      <span class="sec-eyebrow">A different skill, same builder</span>
+      <h2>Building is one thing. Scaling is another.</h2>
+      <p>Pegasus proved I can create a brand out of nothing. Ink Plus and Glacial Globals prove I can walk into something already running and push it further, fast.</p>
+    </div>
+
+    <article class="project reveal">
+      <div class="project-media">
+        <div class="media wide" data-video>
+          <video muted loop playsinline preload="metadata"><source src="Ink Plus.mp4" type="video/mp4"></video>
+          <span class="play">▶</span>
+        </div>
+        <div class="sov" id="sov">
+          <div class="sov-row"><span class="sov-label">Ink Plus</span><div class="sov-track"><div class="sov-bar lead" data-w="100">43</div></div></div>
+          <div class="sov-row"><span class="sov-label">Ahmed El-Derini</span><div class="sov-track"><div class="sov-bar" data-w="67">29</div></div></div>
+          <div class="sov-row"><span class="sov-label">CMYK</span><div class="sov-track"><div class="sov-bar" data-w="46">20</div></div></div>
+          <div class="sov-row"><span class="sov-label">Competitor D</span><div class="sov-track"><div class="sov-bar" data-w="33">14</div></div></div>
+          <p class="sov-caption">Content pieces published in the quarter — Share of Voice vs. competitors</p>
+        </div>
+      </div>
+      <div>
+        <span class="project-tag">05 — Scaling an existing brand</span>
+        <h3>Ink Plus: a 2-month sprint</h3>
+        <p>I own the content pipeline and team schedule end to end, reporting directly to the Founder &amp; Director. In two months, Ink Plus became the loudest voice in Egypt's printing supply market — every core metric moved up double digits quarter on quarter.</p>
+        <div class="chips">
+          <div class="chip"><b>1.5M</b>Views, +49.8%</div>
+          <div class="chip"><b>256K</b>Unique viewers, +24.8%</div>
+          <div class="chip"><b>31.9K</b>Page visits, +36.7%</div>
+          <div class="chip"><b>6.6K</b>Interactions, +28.4%</div>
+        </div>
+        <p style="margin-top:22px">Ink Plus published <strong>48% more content</strong> than its nearest competitor — event coverage (Technoprint, Digi Sign), a machine-education series and client testimonials. Organic inbound messages grew <strong>17.2%</strong>: content pulling in real buyers with zero ad spend.</p>
+      </div>
+    </article>
+
+    <article class="project flip reveal">
+      <div class="project-media">
+        <div class="media wide" data-video>
+          <video muted loop playsinline preload="metadata">
+            <source src="Flamingo1234.mp4" type="video/mp4">
+          </video>
+          <span class="play">▶</span>
+        </div>
+      </div>
+      <div>
+        <span class="project-tag">06 — International marketing · Texas, USA</span>
+        <h3>Glacial Globals</h3>
+        <p class="role">Marketing Manager · Jun 2021 – Mar 2022</p>
+        <p>Directed the creative strategy and marketing system for the viral <strong>"I'M A FLAMINGO"</strong> YouTube campaign with Marc Rebillet — <strong>5M+ views</strong> across the organic video launch and its animated adaptation.</p>
+        <p>Built multi-platform social frameworks from the ground up, growing organic engagement <strong>40% in the first 90 days</strong>.</p>
+        <div class="chips">
+          <div class="chip"><b>5M+</b>Campaign views</div>
+          <div class="chip"><b>+40%</b>Organic engagement, 90 days</div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="reel">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">04 / The reel</span>
+      <h2>See it, don't just read it.</h2>
+      <p>Moments from the jersey drop, the event floor, the academy and the brands I grew.</p>
+    </div>
+    <div class="reveal">
+      <div class="reel" id="reelTrack">
+        <div class="media feature"><img src="Behind the Drop.jpg" alt="Behind the jersey drop" loading="lazy" decoding="async"><div class="cap"><b>Jersey launch</b>Behind the drop</div></div>
+        <div class="media" data-video><video muted loop playsinline preload="metadata"><source src="Gamergy Video.mp4" type="video/mp4"></video><span class="play">▶</span><div class="cap"><b>Gamergy floor</b>On the ground</div></div>
+        <div class="media" data-video><video muted loop playsinline preload="metadata"><source src="intro eslam 1.mp4" type="video/mp4"></video><span class="play">▶</span><div class="cap"><b>Ink Plus</b>Sublimation series</div></div>
+        <div class="media"><img src="Academy1.jpg" alt="Pegasus Academy, Top 5 Master Cup" loading="lazy" decoding="async"><div class="cap"><b>Academy</b>Top 5 Master Cup</div></div>
+        <div class="media"><img src="RB1.jpg" alt="Red Bull activation" loading="lazy" decoding="async"><div class="cap"><b>Red Bull</b>Activation day</div></div>
+        <div class="media" data-video><video muted loop playsinline preload="metadata"><source src="Insomnia.mp4" type="video/mp4"></video><span class="play">▶</span><div class="cap"><b>Insomnia</b>Community moment</div></div>
+        <div class="media"><img src="RB2.jpg" alt="Pegasus team at a Red Bull event" loading="lazy" decoding="async"><div class="cap"><b>Red Bull</b>The squad</div></div>
+      </div>
+      <div class="reel-nav">
+        <span>Swipe or use the arrows</span>
+        <span><button type="button" id="reelPrev" aria-label="Scroll reel left">←</button><button type="button" id="reelNext" aria-label="Scroll reel right">→</button></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">05 / Numbers</span>
+      <h2>Impact, by the numbers.</h2>
+      <p>Three brands, three different games: building from nothing, scaling what already existed, and running a campaign in a new market.</p>
+    </div>
+    <div class="reveal">
+      <div class="total">
+        <div class="total-num">9.5M<span>+</span></div>
+        <p class="total-label"><b>Views across the campaigns I led</b> — 3M+ at Pegasus, 1.5M at Ink Plus in one quarter, 5M+ at Glacial Globals.</p>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-block">
+          <div class="impact-head"><span>Zero → one</span><b>Pegasus Esports</b></div>
+          <table class="impact-table"><tbody>
+            <tr><td>Total views</td><td class="num">3M+<span class="num-sub">fully organic</span></td></tr>
+            <tr><td>Monthly impressions</td><td class="num">1.2M+<span class="num-sub">Egypt &amp; MENA</span></td></tr>
+            <tr><td>Engagement</td><td class="num">105K+<span class="num-sub">Instagram + TikTok</span></td></tr>
+            <tr><td>Merch sell-through</td><td class="num">80%<span class="num-sub">in 2 weeks</span></td></tr>
+            <tr><td>Merch reach</td><td class="num">7<span class="num-sub">countries</span></td></tr>
+          </tbody></table>
+        </div>
+        <div class="impact-block">
+          <div class="impact-head hot"><span>One → more</span><b>Ink Plus</b></div>
+          <table class="impact-table"><tbody>
+            <tr><td>Total views</td><td class="num">1.5M<span class="num-sub">+49.8% QoQ</span></td></tr>
+            <tr><td>Unique viewers</td><td class="num">256K<span class="num-sub">+24.8% QoQ</span></td></tr>
+            <tr><td>Page visits</td><td class="num">31.9K<span class="num-sub">+36.7% QoQ</span></td></tr>
+            <tr><td>Organic inbound messages</td><td class="num">+17.2%<span class="num-sub">zero ad spend</span></td></tr>
+            <tr><td>Content vs. nearest rival</td><td class="num">+48%<span class="num-sub">43 pieces vs. 29</span></td></tr>
+          </tbody></table>
+        </div>
+        <div class="impact-block">
+          <div class="impact-head"><span>New market</span><b>Glacial Globals</b></div>
+          <table class="impact-table"><tbody>
+            <tr><td>Campaign views</td><td class="num">5M+<span class="num-sub">"I'M A FLAMINGO"</span></td></tr>
+            <tr><td>Organic engagement</td><td class="num">+40%<span class="num-sub">first 90 days</span></td></tr>
+          </tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">06 / Foundation</span>
+      <h2>Education &amp; certifications</h2>
+    </div>
+    <div class="list reveal">
+      <div class="list-item"><div><h4>Bachelor of Commerce (English Section) — Marketing</h4><p>Cairo University · Giza, Egypt</p></div><span class="year">2020 – 2024</span></div>
+      <div class="list-item"><div><h4>Project Management Professional (PMP)</h4><p>365 Careers</p></div><span class="year">May 2025</span></div>
+      <div class="list-item"><div><h4>Professional Sports Management</h4><p>International Olympic Committee (IOC)</p></div><span class="year">Oct 2024</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="writing">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">07 / Editorial</span>
+      <h2>Content writing — GameExp</h2>
+      <p>Covered the regional esports scene through interviews and features — the stories behind the teams, players and growth of competitive gaming in MENA.</p>
+    </div>
+    <div class="list reveal">
+      <div class="list-item"><div><h4>Industry interviews</h4><p>Players, coaches and team managers on their journeys and the evolving esports ecosystem.</p><div class="org-chips"><span>Nasr eSports</span><span>RAAD Esports</span><span>Anubis Gaming</span></div></div></div>
+      <div class="list-item"><div><h4>Editorial storytelling</h4><p>Documenting the rise of esports in the region and the people shaping the competitive scene.</p></div></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-row reveal">
+      <div class="contact-cta">
+        <span class="sec-eyebrow">08 / Contact</span>
+        <h2>Building something? <em>Let's talk.</em></h2>
+        <div class="contact-actions">
+          <a class="btn btn-solid" href="mailto:ahmeddmotazz@gmail.com">Email me</a>
+          <a class="btn btn-ghost" href="https://wa.me/201140448805" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:ahmeddmotazz@gmail.com">ahmeddmotazz@gmail.com</a>
+          <a href="tel:+201140448805">+20 114 044 8805</a>
+          <a href="#" data-linkedin target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="frame tilt">
+        <div class="frame-accent"></div>
+        <div class="media"><img src="Outro.jpg" alt="Ahmed Moataz" loading="lazy" decoding="async"></div>
+        <div class="badge">Say hello<b>Let's build something</b></div>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand">AHMED<span>.</span>MOATAZ</div>
+        <p>Brand builder for esports, gaming and consumer brands across MENA and the US.</p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-title">Navigate</span>
+        <a href="#about">About</a><a href="#work">Work</a><a href="#reel">Reel</a><a href="#impact">Impact</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-title">More</span>
+        <a href="#education">Education</a><a href="#writing">Writing</a><a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-title">Reach me</span>
+        <a href="mailto:ahmeddmotazz@gmail.com">Email</a>
+        <a href="https://wa.me/201140448805" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#" data-linkedin target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Ahmed Moataz</span><span>Cairo, Egypt</span></div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Media viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <div class="lightbox-media" id="lightboxMedia"></div>
+  <div class="lightbox-hint">Press Esc or click outside to close</div>
+</div>
+
+<script>
+  /* 1. Paste your LinkedIn link here. Leave it empty and the LinkedIn links stay hidden. */
+  const LINKEDIN_URL = "";
+
+  document.querySelectorAll('[data-linkedin]').forEach(a => {
+    if (LINKEDIN_URL) a.href = LINKEDIN_URL; else a.remove();
+  });
+
+  /* 2. Mobile menu */
+  const nav = document.getElementById('nav');
+  const menuBtn = document.getElementById('menuBtn');
+  menuBtn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.textContent = open ? '✕' : '☰';
+  });
+  document.querySelectorAll('#navlinks a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); menuBtn.textContent = '☰';
+  }));
+
+  /* 3. Scroll reveals */
+  const revealIO = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+
+  /* 4. Share-of-voice bars grow when they come into view */
+  const sov = document.getElementById('sov');
+  if (sov) new IntersectionObserver((entries, obs) => {
+    if (entries[0].isIntersecting) {
+      sov.querySelectorAll('.sov-bar').forEach(b => b.style.width = b.dataset.w + '%');
+      obs.disconnect();
+    }
+  }, { threshold: 0.4 }).observe(sov);
+
+  /* 5. Videos only play while on screen (saves data on phones, keeps the page fast) */
+  const videoIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) { v.play().catch(() => {}); } else { v.pause(); }
+    });
+  }, { threshold: 0.25 });
+  document.querySelectorAll('.media video').forEach(v => videoIO.observe(v));
+
+  /* 6. Missing-file safety net: a missing file shows a clean panel, never a broken box */
+  const missing = [];
+  function markMissing(el, name) {
+    const box = el.closest('.media, .hero-bg');
+    if (box && box.classList.contains('media')) box.classList.add('is-missing');
+    missing.push(name);
+    console.warn('Missing or unplayable file (check spelling, capitals, and that videos are H.264 MP4):', name);
+    showChecker();
+  }
+  document.querySelectorAll('img').forEach(img => {
+    const check = () => { if (img.complete && img.naturalWidth === 0) markMissing(img, img.getAttribute('src')); };
+    img.addEventListener('error', () => markMissing(img, img.getAttribute('src')));
+    if (img.complete) check();
+  });
+  document.querySelectorAll('video').forEach(v => {
+    const sources = v.querySelectorAll('source');
+    if (!sources.length) return;
+    const last = sources[sources.length - 1];
+    last.addEventListener('error', () => markMissing(v, [...sources].map(s => s.getAttribute('src')).join(' or ')));
+  });
+
+  let checkerEl = null;
+  function showChecker() {
+    if (!location.search.includes('check')) return;
+    if (!checkerEl) { checkerEl = document.createElement('div'); checkerEl.className = 'checker'; document.body.appendChild(checkerEl); }
+    checkerEl.innerHTML = '<b>Files that did not load (' + missing.length + '):</b><br>' + missing.join('<br>') +
+      '<br><br>Fix: the name must match your folder exactly, including capital letters. For videos, also make sure they are H.264 MP4 (HandBrake).';
+  }
+  if (location.search.includes('check')) {
+    window.addEventListener('load', () => setTimeout(() => {
+      if (!missing.length) {
+        checkerEl = document.createElement('div'); checkerEl.className = 'checker';
+        checkerEl.innerHTML = '<b style="color:#7ddc8a">All files found.</b> Every photo and video loaded.';
+        document.body.appendChild(checkerEl);
+      }
+    }, 4000));
+  }
+
+  /* 7. Lightbox: open any photo or video full size. Videos play with sound here. */
+  const lightbox = document.getElementById('lightbox');
+  const lbMedia = document.getElementById('lightboxMedia');
+  let lastFocus = null;
+  function openLightbox(box) {
+    if (box.classList.contains('is-missing')) return;
+    const src = box.querySelector('img, video');
+    if (!src) return;
+    lbMedia.innerHTML = '';
+    let node;
+    if (src.tagName === 'VIDEO') {
+      node = document.createElement('video');
+      node.src = src.currentSrc || src.querySelector('source').getAttribute('src');
+      node.controls = true; node.playsInline = true; node.loop = true;
+    } else {
+      node = document.createElement('img');
+      node.src = src.currentSrc || src.getAttribute('src');
+      node.alt = src.alt;
+    }
+    lbMedia.appendChild(node);
+    lastFocus = document.activeElement;
+    lightbox.classList.add('open');
+    document.getElementById('lightboxClose').focus();
+    if (node.tagName === 'VIDEO') node.play().catch(() => {});
+  }
+  function closeLightbox() {
+    const v = lbMedia.querySelector('video'); if (v) v.pause();
+    lbMedia.innerHTML = '';
+    lightbox.classList.remove('open');
+    if (lastFocus) lastFocus.focus();
+  }
+  document.querySelectorAll('.media').forEach(box => {
+    box.setAttribute('tabindex', '0');
+    box.addEventListener('click', () => openLightbox(box));
+    box.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(box); } });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
+
+  /* 8. Reel arrows */
+  const reel = document.getElementById('reelTrack');
+  document.getElementById('reelPrev').addEventListener('click', () => reel.scrollBy({ left: -300, behavior: 'smooth' }));
+  document.getElementById('reelNext').addEventListener('click', () => reel.scrollBy({ left: 300, behavior: 'smooth' }));
+</script>
+</body>
+</html>
